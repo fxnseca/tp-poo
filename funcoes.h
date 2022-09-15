@@ -12,28 +12,14 @@
 using namespace std;
 
 
-vector<Livro*> searchPLanguage(string& language,vector<Livro*>& lista){
-    vector<Livro*> colection;
-    copy_if(lista.begin(),lista.end(),colection.begin(),
+void searchPLanguage(string& language,const vector<Livro*>& lista,vector<Livro*>& collection){
+    copy_if(lista.begin(),lista.end(),collection.begin(),
     [language](Livro* livro){return language.compare((*livro).getIdiomaOriginal());});   
 }
 
-bool existsAudioBookWriter(string name,vector<Livro*> &colection){
-    vector<Livro*>::iterator itr;
-    vector<string> escritores;
-   
-    for(itr=colection.begin();itr!=colection.end();++itr){
-        if(typeid(*(*itr)) == typeid(class AudioBook)){
-           vector<string> escritores((*itr)->getEscritores());
-           auto it find(escritores.begin(),escritores.end(),name);
-           if(it!=escritores.end()){
-              return true;
-           }
-           escritores.clear();
-        }        
-    }
-    return false;
-}
+
+
+
 
 
 

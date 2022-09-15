@@ -101,8 +101,8 @@ int main(){
                 arquivo>>colunas;
                 //criando e inserindo o objeto impresso a lista
 
-                lista.push_back(new impresso(escritores,titulo,capitulos,ano,
-                idioma,keywords,livrarias,colunas));
+                lista.push_back(new Impresso(livrarias,colunas,escritores,titulo,capitulos,ano,
+                idioma,keywords));
                 break;
             }
             case 2:{
@@ -112,8 +112,8 @@ int main(){
                 arquivo>>formatoArquivo;
                 //criando e inserindo o objeto livro a lista
 
-                lista.push_back(new eletronico(escritores,titulo,capitulos,ano,
-                idioma,keywords,url,formatoArquivo));
+                lista.push_back(new Eletronico(url,formatoArquivo,escritores,titulo,capitulos,ano,
+                idioma,keywords));
                 break;
             }
             case 3:{
@@ -123,8 +123,8 @@ int main(){
                 arquivo>>formatoAudio;
                 //criando e inserindo o objeto livro a lista
 
-                lista.push_back(new audiobook(escritores,titulo,capitulos,ano,
-                idioma,keywords,duracao,formatoAudio));
+                lista.push_back(new AudioBook(duracao,formatoAudio,escritores,titulo,capitulos,ano,
+                idioma,keywords));
                 break;
             }
             default:
@@ -139,6 +139,8 @@ int main(){
 
     }//finalizou leitura  
   
+
+    
 
     return 0;
 }
