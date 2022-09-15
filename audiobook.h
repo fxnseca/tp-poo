@@ -5,17 +5,19 @@
 #include "livro.h"
 
 using namespace std;
-typedef const char* String;
+
 
 class AudioBook : public Livro{
     float duracao;
-    String formatoAudio;
+    string formatoAudio;
 
 public:
+    AudioBook(float, string, vector<string>, string, vector<string>, int, string, vector<string>);
+    ~AudioBook();
     float getDuracao();
     void setDuracao(float);
-    String getFormatoAudio();
-    void setFormatoAudio(String);
+    string getFormatoAudio();
+    void setFormatoAudio(string);
 };
 
 #endif

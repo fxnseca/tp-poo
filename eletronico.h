@@ -5,17 +5,18 @@
 #include "livro.h"
 
 using namespace std;
-typedef const char* String;
 
 class Eletronico : public Livro{
-    String url;
-    String formatoArquivo;
+    string url;
+    string formatoArquivo;
 
 public:
-    String getUrl();
-    void setUrl(String);
-    String getFormatoArquivo();
-    void setFormatoArquivo(String);
+    Eletronico(string, string, vector<string>, string, vector<string>, int, string, vector<string>);
+    ~Eletronico();
+    string getUrl();
+    void setUrl(string);
+    string getFormatoArquivo();
+    void setFormatoArquivo(string);
 };
 
 #endif

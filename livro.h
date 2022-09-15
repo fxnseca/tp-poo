@@ -4,31 +4,31 @@
 #include <vector>
 
 using namespace std;
-typedef const char* String;
+
 
 class Livro{
-    vector<String> escritores;
-    String titulo;
-    vector<String> capitulos;
+    vector<string> escritores;
+    string titulo;
+    vector<string> capitulos;
     int anoPublicacao;
-    String idiomaOriginal;
-    vector<String> keywords;
+    string idiomaOriginal;
+    vector<string> keywords;
 
 public:
-    Livro(vector<String> esc, vector<String> tit, vector<String> cap, int anoPub, String idi, vector<String> key);
+    Livro(vector<string>, string, vector<string>, int, string, vector<string>);
     Livro();
-    vector<String>getEscritores();
-    void setEscritores(vector<String>);
-    String getTitulo();
-    void setTitulo(String);
-    vector<String>getCapitulos();
-    void setCapitulos(vector<String>);
+    vector<string>getEscritores();
+    void setEscritores(vector<string>);
+    string getTitulo();
+    void setTitulo(string);
+    vector<string>getCapitulos();
+    void setCapitulos(vector<string>);
     int getAnoPublicacao();
     void setAnoPublicacao(int);
-    String getIdiomaOriginal();
-    void setIdiomaOriginal(String);
-    vector<String>getKeywords();
-    void setKeywords(vector<String>);
+    string getIdiomaOriginal();
+    void setIdiomaOriginal(string);
+    vector<string>getKeywords();
+    void setKeywords(vector<string>);
 };
 
 #endif

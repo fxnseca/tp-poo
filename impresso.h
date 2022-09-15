@@ -1,18 +1,20 @@
 #ifndef IMPRESSO_H
 #define IMPRESSO_H
+
 #include <vector>
 #include "livro.h"
 
 using namespace std;
-typedef const char* String;
 
 class Impresso : public Livro{
-    vector<String> livrarias;
+    vector<string> livrarias;
     int colunas;
+    
 public:
-    Impresso(vector<String> esc, vector<String> tit, vector<String> cap, int anoPub, String idi, vector<String> key, vector<String> liv, int col);
-    vector<String> getLivrarias();
-    void setLivrarias(vector<String>);
+    Impresso(vector<string>, int, vector<string>, string, vector<string>, int, string, vector<string>);
+    ~Impresso();
+    vector<string> getLivrarias();
+    void setLivrarias(vector<string>);
     int getColunas();
     void setColunas(int);
 };
