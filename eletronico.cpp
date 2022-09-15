@@ -20,7 +20,7 @@ void Eletronico :: setUrl(string url)
 }
 
 
-string Eletronico :: getUrl()
+string Eletronico :: getFormatoArquivo()
 {
     return formatoArquivo;
 }

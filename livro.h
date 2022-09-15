@@ -16,7 +16,7 @@ class Livro{
 
 public:
     Livro(vector<string>, string, vector<string>, int, string, vector<string>);
-    Livro();
+    ~Livro();
      vector<string>getEscritores();
      void setEscritores(vector<string>);
      string getTitulo();
@@ -30,6 +30,19 @@ public:
     vector<string>getKeywords();
     void setKeywords(vector<string>);
     friend ostream& operator <<(ostream&, Livro&);
+    friend vector<Livro> eletronicosOrdenados(vector<Livro>);
 };
+
+vector<Livro> eletronicosOrdenados(vector<Livro> colecao)
+{
+    list<Livro> tmp;
+    
+    tmp.assign(colecao.begin(), colecao.end());
+    tmp.sort();
+    vector<Livro> retorno (tmp.begin(), tmp.end());
+    return retorno;
+
+}
+
 
 #endif

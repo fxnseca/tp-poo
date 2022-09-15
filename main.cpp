@@ -139,8 +139,11 @@ int main(){
 
     }//finalizou leitura  
   
+    vector<Livro*> copia(lista);
 
-    
+    vector<Livro*> v;
+    searchPLanguage("espanhol",copia,v);
+    cout<<v.size();
 
     return 0;
 }
