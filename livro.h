@@ -17,18 +17,19 @@ class Livro{
 public:
     Livro(vector<string>, string, vector<string>, int, string, vector<string>);
     Livro();
-    vector<string>getEscritores();
-    void setEscritores(vector<string>);
-    string getTitulo();
-    void setTitulo(string);
-    vector<string>getCapitulos();
-    void setCapitulos(vector<string>);
+     vector<string>getEscritores();
+     void setEscritores(vector<string>);
+     string getTitulo();
+     void setTitulo(string);
+     vector<string>getCapitulos();
+     void setCapitulos(vector<string>);
     int getAnoPublicacao();
     void setAnoPublicacao(int);
     string getIdiomaOriginal();
     void setIdiomaOriginal(string);
     vector<string>getKeywords();
     void setKeywords(vector<string>);
+    friend ostream& operator <<(ostream&, Livro&);
 };
 
 #endif

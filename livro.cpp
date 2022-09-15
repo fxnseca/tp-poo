@@ -70,3 +70,8 @@ void Livro :: setKeywords(vector<string> keywords)
 {
     this->keywords = keywords;
 }
+
+ostream& operator <<(ostream&, Livro&)
+{
+    
+}
