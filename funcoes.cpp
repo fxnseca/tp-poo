@@ -4,30 +4,21 @@
 
 using namespace std;
 
-bool compara (Livro* l)
+template<typename T>
+bool filter (Livro* l)
 {   
-    Eletronico* e = dynamic_cast<Eletronico*>(l);
+    T e = dynamic_cast<T>(l);
     if(e==nullptr)
         return false;
 
     return true;
 }
-
-bool compareLang(Livro* l){
-    AudioBook* e = dynamic_cast<AudioBook*>(l);
-
-    if(e==nullptr)
-        return false;
-
-    return true;
-}
-
 
 vector<Livro*>* eletronicosOrdenados(vector<Livro*> colecao)
 {
     vector<Livro*> *tpm = new vector<Livro*>;
     
-    copy_if(colecao.begin(), colecao.end(), back_inserter(*tpm), compara);
+    copy_if(colecao.begin(), colecao.end(), back_inserter(*tpm), filter<Eletronico*>);
 
     cout << tpm->size()<< endl;
     sort(tpm->begin(), tpm->end(), 
@@ -51,7 +42,7 @@ bool existisAudiobookWriter(vector<Livro*>& colecao,string name){
     vector<Livro*> onlyAudioBooks;
     vector<string> escritores;
 
-    copy_if(colecao.begin(),colecao.end(),back_inserter(onlyAudioBooks),compareLang);
+    copy_if(colecao.begin(),colecao.end(),back_inserter(onlyAudioBooks),filter<AudioBook*>);
 
     for(itr = onlyAudioBooks.begin();itr!= onlyAudioBooks.end();itr++){
         escritores = (*itr)->getEscritores();
@@ -72,4 +63,31 @@ vector<Livro*>* searchPLanguage(string language,vector<Livro*>& lista){
     });  
     
     return collection; 
+}
+
+int countPkeyword (vector<Livro*> livros, string key)
+{
+    int soma = 0;
+
+    for (vector<Livro*>:: iterator i = livros.begin(); i != livros.end(); i++)
+    {
+        vector<string> strings = (*i)->getKeywords();
+        if (find(strings.begin(),strings.end(),key) != strings.end())
+            soma++;
+    }
+    
+    return soma;
+}
+
+
+vector <Livro*> impressosEmLivrarias (vector <Livro*> colecao, int n)
+{
+    vector<Livro*> retorno;
+    copy_if(colecao.begin(),colecao.end(),back_inserter(retorno),
+    [n](Livro* l){
+         Impresso* imp = dynamic_cast<Impresso*>(l);
+         return imp!=nullptr && (imp->getLivrarias()).size() >= n;
+    });
+
+    return retorno;
 }

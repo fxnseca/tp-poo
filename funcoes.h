@@ -13,6 +13,9 @@
 
 using namespace std;
 
+template<typename T>
+bool filter (Livro* l);
+
 
 
 vector<Livro*>* searchPLanguage(string, vector<Livro*>&);
@@ -23,10 +26,6 @@ vector<Livro*>* eletronicosOrdenados(vector<Livro*>);
 
 bool existisAudiobookWriter(vector<Livro*>&,string);
 
+int countPkeyword (vector<Livro*>, string);
 
-// //Fazer uma função pra processar a linha lida do arquivo e transformar em vetor de string
-// vector<string> processarString(string &s){
-//     vector<string> resultado;
-// }
-
-// void loadFile(vector<Livro*> &livros){}
+vector <Livro*> impressosEmLivrarias (vector <Livro*>, int);

@@ -139,13 +139,26 @@ int main(){
 
     }//finalizou leitura  
 
-    string l = "J. K. Rowlinfg";
-    vector <Livro*> * variavel;
-    vector<Livro*> *vec = eletronicosOrdenados(lista);
-    variavel = searchPLanguage(l,lista);
-    cout << variavel->size() << endl;
-    cout << existisAudiobookWriter(lista,l);
+    vector<Livro*>* livrosIdioma = searchPLanguage("Frances",lista);
+
+    for (int i = 0; i < livrosIdioma->size(); i++)
+    {
+        cout << (*livrosIdioma)[i]->getTitulo() + " ";
+        cout << "(" << (*livrosIdioma)[i]->getIdiomaOriginal() << ")" << endl;
+    }
     
+    vector <Livro*> impressos = impressosEmLivrarias(lista, 2);
+    if (impressos.size() == 0)
+        cout << "Nao encontrado"<< endl;
+    else 
+    {
+        for (int i = 0; i < impressos.size(); i++)
+        {
+            Impresso* impressoCasted = dynamic_cast<Impresso*>(impressos[i]);
+
+            cout <<"Titulo: " << impressoCasted->getTitulo() << " - " << (impressoCasted->getLivrarias()).size() << endl;
+        }
+    }
 
     return 0;
 
