@@ -7,6 +7,7 @@ duracao(duracao), formatoAudio(formatoAudio){}
 
 AudioBook :: ~AudioBook(){}
 
+void AudioBook :: teste (){}
 
 float AudioBook :: getDuracao()
 {

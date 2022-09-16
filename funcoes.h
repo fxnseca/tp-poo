@@ -8,36 +8,20 @@
 #include <fstream>
 #include <vector>
 #include <algorithm>
+#include <iterator>
+#include <typeinfo>
 
 using namespace std;
 
 
-void searchPLanguage(string language,const vector<Livro*>& lista,vector<Livro*>& collection){
-    copy_if(lista.begin(),lista.end(),collection.begin(),
-    [language](Livro* livro){return language.compare((*livro).getIdiomaOriginal());});   
-}
 
-bool existisAudiobookWriter(const vector<Livro*> colecao,string name){
-    vector<Livro*>::iterator itr;
-    vector<string>::iterator found;
-    vector<livro*> onlyAudioBooks;
-    vector<string> escritores;
-
-    copy_if(colecao.begin(),colecao.end(),onlyAudioBooks.begin(),
-    [](Livro* l){return typeid(*livro)==(class AudioBook)});
-
-    for(itr = onlyAudioBooks.begin(),itr!= onlyAudioBooks.end(),itr++){
-        escritores = (*itr)->getEscritores;
-        found = find(escritores.begin(),escritores.end(),name);
-        if(found!=escritores.end()){
-            return true;
-        }   
-    }
-    return false;
-}
+vector<Livro*>* searchPLanguage(string, vector<Livro*>&);
 
 
+vector<Livro*>* eletronicosOrdenados(vector<Livro*>);
 
+
+bool existisAudiobookWriter(vector<Livro*>&,string);
 
 
 // //Fazer uma função pra processar a linha lida do arquivo e transformar em vetor de string

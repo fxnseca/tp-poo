@@ -6,17 +6,21 @@
 
 using namespace std;
 
+
 class Eletronico : public Livro{
     string url;
     string formatoArquivo;
 
 public:
-    Eletronico(string, string, vector<string>, string, vector<string>, int, string, vector<string>);
-    ~Eletronico();
+
+    Eletronico(string, string, vector<string> , string, vector<string>, 
+int, string , vector<string>);
+    virtual ~Eletronico();
     string getUrl();
     void setUrl(string);
     string getFormatoArquivo();
     void setFormatoArquivo(string);
+    virtual void teste ();
 };
 
 #endif

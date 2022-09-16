@@ -138,12 +138,15 @@ int main(){
         arquivo.close();
 
     }//finalizou leitura  
-  
-    vector<Livro*> copia(lista);
 
-    vector<Livro*> v;
-    searchPLanguage("espanhol",copia,v);
-    cout<<v.size();
+    string l = "J. K. Rowlinfg";
+    vector <Livro*> * variavel;
+    vector<Livro*> *vec = eletronicosOrdenados(lista);
+    variavel = searchPLanguage(l,lista);
+    cout << variavel->size() << endl;
+    cout << existisAudiobookWriter(lista,l);
+    
 
     return 0;
+
 }

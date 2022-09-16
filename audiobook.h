@@ -13,11 +13,12 @@ class AudioBook : public Livro{
 
 public:
     AudioBook(float, string, vector<string>, string, vector<string>, int, string, vector<string>);
-    ~AudioBook();
+    virtual ~AudioBook();
     float getDuracao();
     void setDuracao(float);
     string getFormatoAudio();
     void setFormatoAudio(string);
+    virtual void teste ();
 };
 
 #endif
